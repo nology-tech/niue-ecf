@@ -12,9 +12,9 @@ describe("initial tests for content header", () => {
     it("should render a heading and a link on the page", () => {
         customRender(<ContentHeader title="Test Title" link="/" />);
         const title = screen.getByText("Test Title");
-        const link = screen.getByText("View All");
+        const link = screen.getAllByText("View All");
         expect(title).toBeInTheDocument();
-        expect(link).toBeInTheDocument();
+        expect(link[0]).toBeTruthy();
     });
 
     it("should render a heading passed through the title prop", () => {
@@ -31,9 +31,10 @@ describe("initial tests for content header", () => {
         </Routes>);
 
         customRender(toRender);
-        const viewAll = screen.getByText("View All");
-        userEvent.click(viewAll);
+        const viewAll = screen.getAllByText("View All");
+        userEvent.click(viewAll[0]);
         const card = screen.getByTestId("pathwaycard");
         expect(card).toBeInTheDocument();
+       
     });
 });

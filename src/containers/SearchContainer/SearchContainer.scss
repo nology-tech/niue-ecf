@@ -1,62 +1,64 @@
 @use "../../assets/sass/variables" as *;
 
 .search-container {
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-   
-    
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 
-    &__list {
-        display: flex;
-        flex-wrap: wrap;
-        width: 90vw;
-        margin-top: 25px;
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    width: 90vw;
+    margin-top: 25px;
 
-        * {
-            margin: 5px;
-        }
+    * {
+      margin: 5px;
     }
+  }
 
-    &__heading {
-        font-size: 24px;
-        color: $primary-color-navy;
-        font-family: $primary-font-family;
-        text-align: left;
-        width: 90vw;
-        margin-top: 0px;
-        margin-bottom: 0px;
-        padding-bottom: 0px;
+  &__heading {
+    font-size: 24px;
+    color: $primary-color-navy;
+    font-family: $primary-font-family;
+    text-align: left;
+    width: 90vw;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+  }
+
+  &__titles {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    width: 90vw;
+  }
+
+  &__view-button {
+    font-size: 16px;
+    color: $primary-color-lilac;
+    text-decoration: underline;
+    $font-family: $primary-font-family;
+    width: 100px;
+    margin-top: 7px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+
+    &:hover {
+      color: $primary-color-navy;
     }
+  }
 
-    &__titles {
-        display: flex;
-        justify-content: space-between;
-        align-content: center;
-        width: 90vw;
+  &__carousel {
+    margin-top: 27px;
+    width: 100vw;
+  }
+
+  &__articles-list {
+    &--search {
+      height: 500px;
+      overflow: clip;
     }
-
-    &__view-button {
-        font-size: 16px;
-        color: $primary-color-lilac;
-        text-decoration: underline;
-        $font-family: $primary-font-family;
-        width: 100px;
-        margin-top: 7px;
-        margin-bottom: 0px;
-        padding-bottom: 0px;
-
-        &:hover {
-            color: $primary-color-navy;
-        }
-    
-    }
-
-    &__carousel {
-        margin-top: 27px;
-        width: 100vw;
-    }
-
-
+  }
 }
