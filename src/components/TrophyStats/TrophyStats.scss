@@ -1,18 +1,40 @@
 @use "../../assets/sass/mixins" as *;
 @use "../../assets/sass/variables" as *;
 
-.trophy-stats-container {
+.trophy-stats{
+  position: relative;
+  bottom: -39px;
+  width: 155px;
+  height: 45px;
+  margin-right: 50px;
+  background-color: $white-color;
   display: flex;
-  flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  width: 130px;
   border: 1px solid #f1f1f1;
   border-radius: 22px;
-  padding: 10px;
+  padding: 2px;
+
+  &__container {
+    width: 75px;
+    display: flex;
+    justify-content: center;
+    
+    * {
+      margin: 3px;
+    }
+
+    &__paragraph {
+      @include paragraph();
+      font-weight: $font-weight-bold;
+      color: $secondary-color-dark-grey; 
+    }
   
-  &__paragraph {
-    @include paragraph();
-    font-weight: $font-weight-bold;
+    &__icon {
+      width: 14px;
+    }
+
   }
+  
+  
 }

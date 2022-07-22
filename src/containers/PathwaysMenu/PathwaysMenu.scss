@@ -5,11 +5,11 @@
   @include light-green-background ();
 
   &__heading{
-    margin: 1em;
-    font-family:$primary-font-family;
-    color: $primary-color-navy;
-    font-size:$font-size-extra-large;
-    font-weight: $font-weight-regular;
+    @include heading1;
+    color: $secondary-color-dark-grey;
+    margin: 30px;
+    margin-top: 51px;
+    margin-bottom: 20px;
   }
 
   &__filters{

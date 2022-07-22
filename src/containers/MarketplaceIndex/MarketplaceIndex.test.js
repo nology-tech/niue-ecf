@@ -3,6 +3,7 @@ import { screen } from "@testing-library/react";
 import MarketplaceIndex from "./MarketplaceIndex";
 import marketData from "../../assets/data/dummyMarketData";
 import userProfile from "../../assets/data/dummyUserData";
+import amazonLogo from "./../../assets/images/amazon-logo.png"
 
 jest.mock("react-router-dom", () => ({
   ...jest.requireActual("react-router-dom"),
@@ -27,5 +28,27 @@ describe("Initial test for marketplace index heading data", () => {
     const image = screen.getByTestId("image");
     expect(image).toBeInTheDocument();
     expect(image).not.toBeFalsy();
+  });
+
+  it("should render a lock when the marketcard is locked", () => {
+    customRender(
+      <MarketplaceIndex marketData={
+        [
+          {
+            image: amazonLogo,
+            heading: "Earn a £5 Amazon Voucher",
+            overview:
+              "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic placeat quis blanditiis. Debitis placeat sunt, sapiente, a iste repudiandae hic necessitatibus natus inventore maxime, perspiciatis sed distinctio praesentium blanditiis ipsa? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic placeat quis blanditiis. Debitis placeat sunt, sapiente, a iste repudiandae hic necessitatibus natus inventore maxime, perspiciatis sed distinctio praesentium blanditiis ipsa? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic placeat quis blanditiis. Debitis placeat sunt, sapiente, a iste repudiandae hic necessitatibus natus inventore maxime, perspiciatis sed distinctio praesentium blanditiis ipsa?",
+            id: 1,
+            skillPoints: 400,
+            trophies: 1,
+            isLocked: true
+          }
+        ]
+      } userProfile={userProfile} />
+    );
+    const lock = screen.getByTestId("marketplace-card-lock");
+    expect(lock).toBeInTheDocument();
+    expect(lock).not.toBeFalsy();
   });
 });

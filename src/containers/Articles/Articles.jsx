@@ -15,11 +15,9 @@ const Articles = ({ articleInfo, userProfile }) => {
 
   return (
     <div className='articles'>
-      <header className="articles__header">
-        <TrophyHeader userProfile={userProfile} />
-      </header>
+      <TrophyHeader userProfile={userProfile} />
+      <h1 className='articles__title'>Articles</h1>
       <div className="articles__content">
-        <h2 className='articles__title'>Articles</h2>
         <SearchBar handleChange={setSearchCriteria} />
         <FilterTag />
         <ArticleCardList articleInfo={articleInfo} />
