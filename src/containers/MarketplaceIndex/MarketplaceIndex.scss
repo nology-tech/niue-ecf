@@ -60,5 +60,26 @@
     height: 120px;
     padding: 20px;
     background-color: $white-color;
+
+    &__overlay {
+      position: absolute;
+      content: "";
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.5);
+      border-radius: 8px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &__lock {
+        height: 32px;
+        margin-bottom: 20px;;
+      }
+    }
   }
 }

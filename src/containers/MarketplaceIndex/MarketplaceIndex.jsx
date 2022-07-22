@@ -6,6 +6,7 @@ import Button from "../../components/Button/Button";
 import "./MarketplaceIndex.scss";
 import MarketplaceIndexOverview from "../../components/MarketplaceIndexOverview/MarketplaceIndexOverview";
 import MarketplaceIndexRequirements from "../../components/MarketplaceIndexRequirements/MarketplaceIndexRequirements";
+import lock from "./../../assets/images/lock.svg";
 
 // path: /marketplace/:marketplaceId
 
@@ -36,6 +37,16 @@ const MarketplaceIndex = (props) => {
       <MarketplaceIndexRequirements marketData={marketData} />
       <MarketplaceIndexOverview marketData={marketData} />
       <div className="marketplace-index__button-container">
+        {pickedMarketCard.isLocked && (
+          <div className="marketplace-index__button-container__overlay">
+            <img
+              data-testid="marketplace-card-lock"
+              src={lock}
+              alt="lock"
+              className="marketplace-index__button-container__overlay__lock"
+            />
+          </div>
+        )}
         <Button buttonText="Purchase" />
       </div>
     </div>
